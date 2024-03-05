@@ -88,7 +88,7 @@ export default function Fir() {
             value="View FIR"
           />
         </Link>
-        <Link to="/plog">
+        <Link to="/book">
           <input
             type="button"
             className="fir_options"

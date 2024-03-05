@@ -20,6 +20,7 @@ import EvidenceRead from './Components/EvidenceRead.jsx';
 import Evidencelog from './Components/Evidencelog.jsx';
 import Policelog from './Components/PoliceLog.jsx';
 import EvidenceWrite from  './Components/EvidenceWrite.jsx';
+import YourComponent from './Components/AllTransactions.jsx';
 
 // import MyForm from './Components/fehb.jsx';
 // import FIRList from './Components/firs.jsx';
@@ -41,7 +42,8 @@ export default function App() {
 
         <Route path="/" element={<Main />} />
         <Route path="/evlog" element={<Evidencelog />} />
-        <Route path="/plog" element={<Policelog />} />
+        {/* <Route path="/plog" element={<Policelog />} /> */}
+        <Route path="/trans" element={<YourComponent />} />
 
 
         

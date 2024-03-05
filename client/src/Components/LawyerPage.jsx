@@ -4,7 +4,7 @@ import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import HireLawyerButton from './HireALawyer';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
-import { ConnectWallet } from '@thirdweb-dev/react';
+import { ConnectWallet,useAddress } from '@thirdweb-dev/react';
 
 const LawyerList = () => {
   const weh={
@@ -52,6 +52,8 @@ const LawyerList = () => {
   });
   const [userAcceptance, setUserAcceptance] = useState(false);
   const [advocateAcceptance, setAdvocateAcceptance] = useState(true);
+  
+
 
   useEffect(() => {
     checkLoginStatus();
@@ -204,13 +206,13 @@ const LawyerList = () => {
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',gap:'6%' }}>
       <Button style={{ backgroundColor: "#ED7D31", border: "none",marginRight:"2%"}} onClick={() => handleClickToChat(lawyer)}>Chat</Button>
       <HireLawyerButton
-        amount="0.1"
-        lawyer={lawyer.Address}
-        user={() => setUserAcceptance(true)}
-        accept={advocateAcceptance}
-        onHireSuccess={() => alert('Lawyer hired successfully')}
-        onHireError={(error) => alert(`Error hiring lawyer: ${error.message}`)}
-      />
+    amount="0.1"
+    lawyer={lawyer.Address}
+    user={() => setUserAcceptance(true)}
+    accept={advocateAcceptance}
+    onHireSuccess={() => alert("Hire Lawyer success")}
+    onHireError={(error) => alert(`Error hiring lawyer: ${error.message}`)}
+/>
       
     </div>
                   </Card.Body>

@@ -30,6 +30,17 @@ const HireLawyerButton = ({ lawyer, onHireSuccess, onHireError,user,accept}) => 
                 try {
                   const data = await contract.call("sendMoney", [[myaddress, lawyer, amount, date, time]]);
                   console.info("contract call success", data);
+                //   {
+                //     const from = userAddress;
+                //     const to = lawyer.Address;
+                //     const amount = "0.1"; // Assuming amount is fixed at 0.1
+            
+                //     const newArray = [from, to, amount, date, time];
+                //   console.log("Details are:- ",newArray);
+                //     sendMoney(newArray)
+                //         .then(() => alert('Lawyer hired successfully'))
+                //         .catch(error => alert(`Error hiring lawyer: ${error.message}`));
+                // }
                 } catch (err) {
                   console.error("contract call failure", err);
                 }
